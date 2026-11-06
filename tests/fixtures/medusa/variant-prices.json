@@ -1,0 +1,63 @@
+{
+ "id": "variant_01M6KDWC0K0J7AFZ3BCFPSK0ZN",
+ "title": "M / White",
+ "sku": "SHIRT-M-WHITE",
+ "ean": null,
+ "upc": null,
+ "barcode": null,
+ "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+ "product": {
+  "title": "Medusa T-Shirt",
+  "id": "prod_01M6KDWBZA6ESC99JHKT8FF14D"
+ },
+ "prices": [
+  {
+   "currency_code": "eur",
+   "raw_amount": {
+    "value": "10",
+    "precision": 20
+   },
+   "price_list_id": null,
+   "rules_count": 0,
+   "min_quantity": null,
+   "max_quantity": null,
+   "id": "price_01M6KDWC1P5Y81RFBVN42XJG1G"
+  },
+  {
+   "currency_code": "usd",
+   "raw_amount": {
+    "value": "15",
+    "precision": 20
+   },
+   "price_list_id": null,
+   "rules_count": 0,
+   "min_quantity": null,
+   "max_quantity": null,
+   "id": "price_01M6KDWC1PVVW0KKQ6VHVNHF3S"
+  },
+  {
+   "currency_code": "eur",
+   "raw_amount": {
+    "value": "9",
+    "precision": 20
+   },
+   "price_list_id": null,
+   "rules_count": 1,
+   "min_quantity": null,
+   "max_quantity": null,
+   "id": "price_01M6KHTWG4D89DW4EJ4SCKDM50"
+  },
+  {
+   "currency_code": "eur",
+   "raw_amount": {
+    "value": "8",
+    "precision": 20
+   },
+   "price_list_id": null,
+   "rules_count": 0,
+   "min_quantity": 10,
+   "max_quantity": null,
+   "id": "price_01M6KHTWG4X1MJ89PZ6TR1BQB0"
+  }
+ ]
+}

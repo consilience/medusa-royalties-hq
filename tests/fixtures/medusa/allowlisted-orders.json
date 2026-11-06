@@ -1,0 +1,1216 @@
+[
+ {
+  "id": "order_01M6KE8YJ5CAT5V435RMET8P2J",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE8YJ7YVHVRMQXQANMXBKC",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   },
+   {
+    "id": "ordli_01M6KE8YJ7MZ073C88027Y81H2",
+    "title": "Medusa Sweatshirt",
+    "product_title": "Medusa Sweatshirt",
+    "variant_id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA",
+    "product_id": "prod_01M6KDWBZAEV81QY89WR69THR3",
+    "variant_sku": "SWEATSHIRT-S",
+    "variant_barcode": null,
+    "quantity": 1,
+    "raw_quantity": {
+     "value": "1",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [],
+    "variant": {
+     "sku": "SWEATSHIRT-S",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": []
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE8YCT804G1TJP9A0J987M",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "40",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:13.970Z",
+      "id": "pay_01M6KE8YQJDP8QYJ0W4KQ0PR8E",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "40",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:14.056Z",
+        "id": "capt_01M6KE8YT8A4B85MAQE3AK2YCQ"
+       }
+      ],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE8ZVNW9DJE687BM12XWVH",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE8ZVNT0RT3DYXF1RX4W2Z",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 3,
+    "raw_quantity": {
+     "value": "3",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [
+     {
+      "raw_amount": {
+       "value": "3",
+       "precision": 20
+      },
+      "is_tax_inclusive": false
+     }
+    ],
+    "tax_lines": [],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": []
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE8ZSQT58PQ55RT8045C22",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "37",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:15.212Z",
+      "id": "pay_01M6KE8ZYC1NGMM6XZFPC0G7J3",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "37",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:15.260Z",
+        "id": "capt_01M6KE8ZZWWXKWS58GBNKQH9D8"
+       }
+      ],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE90B1BP93X1MD94E7VXJH",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE90B1KAKKTG485MVR78F3",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 1,
+    "raw_quantity": {
+     "value": "1",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   },
+   {
+    "id": "ordli_01M6KE90B1MN34RK2VBSP4WENN",
+    "title": "Medusa Sweatpants",
+    "product_title": "Medusa Sweatpants",
+    "variant_id": "variant_01M6KDWC0M5BE6Y1JSNXDH4XGM",
+    "product_id": "prod_01M6KDWBZAQDEP5FBZN2TKF3KV",
+    "variant_sku": "SWEATPANTS-S",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SWEATPANTS-S",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0M5BE6Y1JSNXDH4XGM"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ]
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE908GSTW9YZ6NX3F9DBAK",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "48",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:15.724Z",
+      "id": "pay_01M6KE90EC35AVMKTT3M8RDGMF",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "48",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:15.760Z",
+        "id": "capt_01M6KE90FG1CJJG6N6WXJFME0W"
+       }
+      ],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE915WKVNB0KSKDSVX0QEP",
+  "status": "pending",
+  "currency_code": "usd",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE915WSWTG2H3QR0BM0474",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "15",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [
+     {
+      "raw_amount": {
+       "value": "3",
+       "precision": 20
+      },
+      "is_tax_inclusive": false
+     }
+    ],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "10",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "10",
+       "precision": 20
+      }
+     }
+    ]
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE910RQT2BPRC2NPKEAD1F",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "40.7",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:16.511Z",
+      "id": "pay_01M6KE916ZDCC13259DGVX5E6J",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "40.7",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:16.549Z",
+        "id": "capt_01M6KE918596ZY0RPKRWTQDNAM"
+       }
+      ],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE91HREPDDQ9JG5D03KT53",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE91HSSKSR6JPPK7M1CQP8",
+    "title": "Medusa Sweatshirt",
+    "product_title": "Medusa Sweatshirt",
+    "variant_id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA",
+    "product_id": "prod_01M6KDWBZAEV81QY89WR69THR3",
+    "variant_sku": "SWEATSHIRT-S",
+    "variant_barcode": null,
+    "quantity": 1,
+    "raw_quantity": {
+     "value": "1",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [],
+    "variant": {
+     "sku": "SWEATSHIRT-S",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": []
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE91EYQDJRX5YPC7B370E8",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "20",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:16.915Z",
+      "id": "pay_01M6KE91KKZ9GBKCDEDA5BYVFE",
+      "captures": [],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE91V6AAEHBAVYDD5Z4HE9",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE91V6YN727JAHXYHHR1DZ",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ]
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE91SKV7VX14CVXG1WYF7P",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "36",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:17.191Z",
+      "id": "pay_01M6KE91W7CGPV35SSX4A4ZSWN",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "36",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:17.225Z",
+        "id": "capt_01M6KE91X9T29SANCWB4JA2FB8"
+       }
+      ],
+      "refunds": [
+       {
+        "id": "ref_01M6KE91YM36Z6C0SVN7VV2DKW",
+        "raw_amount": {
+         "value": "7.5",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:17.268Z"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE92AXZDXV7N4MKY3APPCF",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE92AX68RB7FSP81YNBMQA",
+    "title": "Medusa Sweatshirt",
+    "product_title": "Medusa Sweatshirt",
+    "variant_id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA",
+    "product_id": "prod_01M6KDWBZAEV81QY89WR69THR3",
+    "variant_sku": "SWEATSHIRT-S",
+    "variant_barcode": null,
+    "quantity": 1,
+    "raw_quantity": {
+     "value": "1",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SWEATSHIRT-S",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA"
+    }
+   },
+   {
+    "id": "ordli_01M6KE92AXRWQKYY61VR5EWA8J",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ]
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE9298S2C23Z43C46D0195",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "48",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:17.697Z",
+      "id": "pay_01M6KE92C1169V5QHC95J3PQ4M",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "48",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:17.759Z",
+        "id": "capt_01M6KE92DZEZ7R3BEBKATF8EXY"
+       }
+      ],
+      "refunds": [
+       {
+        "id": "ref_01M6KE92TWJ057PMCW4JPKBCJC",
+        "raw_amount": {
+         "value": "12",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:18.172Z"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE934M9KV8DEC5WY09Y4AM",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE934MHP32406A3P5NR45H",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": []
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE932GT9932CF47X7P4YXA",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "30",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:18.544Z",
+      "id": "pay_01M6KE936GYBT9AKX82F4V0WFC",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "30",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:18.570Z",
+        "id": "capt_01M6KE937AW2R1M47872Z6D74Y"
+       }
+      ],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE93XRFAVDGCMHWSZC6SBG",
+  "status": "canceled",
+  "currency_code": "eur",
+  "canceled_at": "2026-11-04T14:09:19.452Z",
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE93XSASQSG9RG566W9PSB",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 1,
+    "raw_quantity": {
+     "value": "1",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   },
+   {
+    "id": "ordli_01M6KE93XSS5XDSDBJDX1YS8SJ",
+    "title": "Medusa Sweatshirt",
+    "product_title": "Medusa Sweatshirt",
+    "variant_id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA",
+    "product_id": "prod_01M6KDWBZAEV81QY89WR69THR3",
+    "variant_sku": "SWEATSHIRT-S",
+    "variant_barcode": null,
+    "quantity": 1,
+    "raw_quantity": {
+     "value": "1",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SWEATSHIRT-S",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ]
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE93WE0T3CE4H1CBCBRGYM",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "36",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:19.316Z",
+      "id": "pay_01M6KE93YMJB5XM1TB2T0AGG7B",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "36",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:19.344Z",
+        "id": "capt_01M6KE93ZGTK9EF3KN4BDXAN7J"
+       }
+      ],
+      "refunds": [
+       {
+        "id": "ref_01M6KE940KNFSBCKPTPSD3JV89",
+        "raw_amount": {
+         "value": "36",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:19.379Z"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE949H82FJ507XX1P8W3X6",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE949HAG71ESC77HD9KZDG",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 1,
+    "raw_quantity": {
+     "value": "1",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "20",
+       "precision": 20
+      }
+     }
+    ]
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE9489MYRD7PSW3Z3CB67X",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "48",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:19.695Z",
+      "id": "pay_01M6KE94AFY91TC1N8WNDQ6RYM",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "48",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:19.731Z",
+        "id": "capt_01M6KE94BK90WEPXD8AYZZCW8A"
+       }
+      ],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KE94S1JF5HWGXD6BW5CS3W",
+  "status": "pending",
+  "currency_code": "eur",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KE94S1EM6SK0JFJT6401KS",
+    "title": "Medusa Sweatshirt",
+    "product_title": "Medusa Sweatshirt",
+    "variant_id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA",
+    "product_id": "prod_01M6KDWBZAEV81QY89WR69THR3",
+    "variant_sku": "SWEATSHIRT-S",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "10",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": false,
+    "requires_shipping": true,
+    "adjustments": [],
+    "tax_lines": [],
+    "variant": {
+     "sku": "SWEATSHIRT-S",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0MNA5A4BKYR8B88BTA"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": false,
+    "adjustments": [],
+    "tax_lines": []
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KE94QW4CTJB2VHG3MSM9ST",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "30",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:09:20.186Z",
+      "id": "pay_01M6KE94ST6MFA0VZNWRDC8RQC",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "30",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:20.210Z",
+        "id": "capt_01M6KE94TJEN745HZ95R3V4Z7D"
+       }
+      ],
+      "refunds": [
+       {
+        "id": "ref_01M6KE94VE6NG0W25EG2M0QM6E",
+        "raw_amount": {
+         "value": "30",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:20.238Z"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "order_01M6KECB0KXYGS0T656ZS00JAP",
+  "status": "pending",
+  "currency_code": "usd",
+  "canceled_at": null,
+  "is_draft_order": false,
+  "items": [
+   {
+    "id": "ordli_01M6KECB0MKK7X6JX4NGV6TW4Q",
+    "title": "Medusa T-Shirt",
+    "product_title": "Medusa T-Shirt",
+    "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+    "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+    "variant_sku": "SHIRT-S-BLACK",
+    "variant_barcode": null,
+    "quantity": 2,
+    "raw_quantity": {
+     "value": "2",
+     "precision": 20
+    },
+    "raw_unit_price": {
+     "value": "15",
+     "precision": 20
+    },
+    "raw_compare_at_unit_price": null,
+    "is_tax_inclusive": true,
+    "requires_shipping": true,
+    "adjustments": [
+     {
+      "raw_amount": {
+       "value": "2.7272727272727275",
+       "precision": 20
+      },
+      "is_tax_inclusive": false
+     }
+    ],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "10",
+       "precision": 20
+      }
+     }
+    ],
+    "variant": {
+     "sku": "SHIRT-S-BLACK",
+     "ean": null,
+     "upc": null,
+     "barcode": null,
+     "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE"
+    }
+   }
+  ],
+  "shipping_methods": [
+   {
+    "raw_amount": {
+     "value": "10",
+     "precision": 20
+    },
+    "is_tax_inclusive": true,
+    "adjustments": [],
+    "tax_lines": [
+     {
+      "raw_rate": {
+       "value": "10",
+       "precision": 20
+      }
+     }
+    ]
+   }
+  ],
+  "payment_collections": [
+   {
+    "id": "pay_col_01M6KECAXFNAABX6XQ28SJG76P",
+    "payments": [
+     {
+      "raw_amount": {
+       "value": "37",
+       "precision": 20
+      },
+      "canceled_at": null,
+      "created_at": "2026-11-04T14:11:05.053Z",
+      "id": "pay_01M6KECB6X9JC4BGTPSTWF4M5G",
+      "captures": [
+       {
+        "raw_amount": {
+         "value": "37",
+         "precision": 20
+        },
+        "created_at": "2026-11-04T14:11:05.210Z",
+        "id": "capt_01M6KECBBTWWSJDW51BFFH1ARE"
+       }
+      ],
+      "refunds": []
+     }
+    ]
+   }
+  ]
+ }
+]

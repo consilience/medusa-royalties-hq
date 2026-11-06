@@ -1,0 +1,146 @@
+{
+  "description": "Bundle A with a 10% discount code on top; the discount is allocated to each component. 10% commission.",
+  "order": {
+    "id": "order_9002",
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 1,
+        "originalUnitPrice": "8.33",
+        "discountTotal": "0.83",
+        "regularUnitPrice": "10.00",
+        "group": {
+          "id": "group_2",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1002",
+        "title": "Book B",
+        "quantity": 1,
+        "originalUnitPrice": "10.00",
+        "discountTotal": "1.00",
+        "regularUnitPrice": "12.00",
+        "group": {
+          "id": "group_2",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_3",
+        "variantId": "1003",
+        "title": "Book C",
+        "quantity": 1,
+        "originalUnitPrice": "6.67",
+        "discountTotal": "0.67",
+        "regularUnitPrice": "8.00",
+        "group": {
+          "id": "group_2",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "8.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "platform_allocation keeps each component's discounted price and commission",
+      "settings": {
+        "bundleSplit": "platform_allocation",
+        "commissionPercent": "10"
+      },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "gross": "7.50",
+            "discount": "0.83",
+            "exTax": "7.50",
+            "commission": "0.75",
+            "net": "6.75",
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_2",
+            "gross": "9.00",
+            "discount": "1.00",
+            "exTax": "9.00",
+            "commission": "0.90",
+            "net": "8.10",
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_3",
+            "gross": "6.00",
+            "discount": "0.67",
+            "exTax": "6.00",
+            "commission": "0.60",
+            "net": "5.40",
+            "method": "platform_allocation"
+          }
+        ]
+      }
+    },
+    {
+      "name": "price_ratio splits the pooled discount and commission with the same weights",
+      "settings": { "bundleSplit": "price_ratio", "commissionPercent": "10" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "discount": "0.83",
+            "exTax": "7.50",
+            "commission": "0.75",
+            "net": "6.75",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_2",
+            "discount": "1.00",
+            "exTax": "9.00",
+            "commission": "0.90",
+            "net": "8.10",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_3",
+            "discount": "0.67",
+            "exTax": "6.00",
+            "commission": "0.60",
+            "net": "5.40",
+            "method": "price_ratio"
+          }
+        ]
+      }
+    }
+  ]
+}

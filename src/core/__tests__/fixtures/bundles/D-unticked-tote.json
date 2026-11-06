@@ -1,0 +1,113 @@
+{
+  "description": "A £22 bundle of Book A ×2 plus a tote bag (a non-book, unticked product). The tote takes part in every weight, and its share is marked included: false so it is counted as unticked revenue, never sent.",
+  "order": {
+    "id": "order_9004",
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 2,
+        "originalUnitPrice": "8.80",
+        "regularUnitPrice": "10.00",
+        "group": {
+          "id": "group_4",
+          "title": "Book A gift set",
+          "quantity": 1,
+          "variantId": "1012"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1004",
+        "title": "Tote bag",
+        "quantity": 1,
+        "originalUnitPrice": "4.40",
+        "regularUnitPrice": "5.00",
+        "group": {
+          "id": "group_4",
+          "title": "Book A gift set",
+          "quantity": 1,
+          "variantId": "1012"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1004",
+      "included": false,
+      "title": "Tote bag",
+      "regularUnitPrice": "5.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "platform_allocation",
+      "settings": { "bundleSplit": "platform_allocation" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "quantity": 2,
+            "exTax": "17.60",
+            "included": true,
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_2",
+            "quantity": 1,
+            "exTax": "4.40",
+            "included": false,
+            "method": "platform_allocation"
+          }
+        ]
+      }
+    },
+    {
+      "name": "price_ratio: weights 10×2 : 5×1",
+      "settings": { "bundleSplit": "price_ratio" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "17.60",
+            "included": true
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "4.40",
+            "included": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "even: weights by quantity 2 : 1",
+      "settings": { "bundleSplit": "even" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "quantity": 2,
+            "exTax": "14.67",
+            "included": true
+          },
+          {
+            "lineId": "line_2",
+            "quantity": 1,
+            "exTax": "7.33",
+            "included": false
+          }
+        ]
+      }
+    }
+  ]
+}

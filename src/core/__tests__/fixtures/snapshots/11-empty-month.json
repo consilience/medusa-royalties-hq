@@ -1,0 +1,41 @@
+{
+  "description": "Nothing sold or refunded: zero rows is a valid snapshot that says the store reported nothing.",
+  "period": "2026-08",
+  "orders": [],
+  "expected": {
+    "rows": [],
+    "summary": {
+      "orders_included": 0,
+      "orders_excluded": 0,
+      "refunds_included": 0,
+      "unticked_product_lines": 0,
+      "unticked_revenue": {},
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": {
+        "count": 0,
+        "revenue": {},
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    },
+    "settings": {
+      "commission_percent": null,
+      "card_fee_mode": "none",
+      "include_shipping": false,
+      "bundle_split": "price_ratio",
+      "frequency_months": 1,
+      "push_day": 15,
+      "refund_cutoff_at": "2026-09-15T00:00:00+01:00",
+      "push_mode": "automatic",
+      "card_fee_flat_percent": null,
+      "commission_excludes_fees_confirmed": false,
+      "fee_gateway_fallbacks": []
+    }
+  }
+}

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "ordch_01M6KE94CEEXW2DJR4DMGQGA7F",
+    "return_id": null,
+    "claim_id": null,
+    "exchange_id": null,
+    "version": 2,
+    "change_type": "edit",
+    "description": null,
+    "status": "confirmed",
+    "internal_note": null,
+    "created_by": null,
+    "requested_by": null,
+    "requested_at": "2026-11-04T14:09:19.817Z",
+    "confirmed_by": null,
+    "confirmed_at": "2026-11-04T14:09:19.913Z",
+    "declined_by": null,
+    "declined_reason": null,
+    "metadata": null,
+    "declined_at": null,
+    "canceled_by": null,
+    "canceled_at": null,
+    "carry_over_promotions": null,
+    "no_notification": null,
+    "order_id": "order_01M6KE949H82FJ507XX1P8W3X6",
+    "created_at": "2026-11-04T14:09:19.758Z",
+    "updated_at": "2026-11-04T14:09:19.923Z",
+    "deleted_at": null,
+    "order": {
+      "id": "order_01M6KE949H82FJ507XX1P8W3X6"
+    },
+    "actions": [
+      {
+        "id": "ordchact_01M6KE94CYEKNV44R2VENHTP4S",
+        "order_id": "order_01M6KE949H82FJ507XX1P8W3X6",
+        "return_id": null,
+        "claim_id": null,
+        "exchange_id": null,
+        "ordering": 10,
+        "version": 2,
+        "reference": null,
+        "reference_id": null,
+        "action": "ITEM_UPDATE",
+        "details": {
+          "quantity": 1,
+          "reference_id": "ordli_01M6KE949HAG71ESC77HD9KZDG",
+          "quantity_diff": -2
+        },
+        "internal_note": null,
+        "applied": true,
+        "order_change_id": "ordch_01M6KE94CEEXW2DJR4DMGQGA7F",
+        "raw_amount": null,
+        "created_at": "2026-11-04T14:09:19.774Z",
+        "updated_at": "2026-11-04T14:09:19.926Z",
+        "deleted_at": null,
+        "amount": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,120 @@
+{
+  "description": "JPY (no minor unit), tax-inclusive at 10%. A ¥2,750 bundle (¥250 tax recorded) with the whole price and tax on the first component. The guard fails; price_ratio splits gross, tax-free amount and every deduction in whole yen.",
+  "order": {
+    "id": "order_9010",
+    "currency": "JPY",
+    "taxesIncluded": true,
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 1,
+        "originalUnitPrice": "2750",
+        "tax": "250",
+        "regularUnitPrice": "1100",
+        "group": {
+          "id": "group_10",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1002",
+        "title": "Book B",
+        "quantity": 1,
+        "originalUnitPrice": "0",
+        "regularUnitPrice": "1320",
+        "group": {
+          "id": "group_10",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_3",
+        "variantId": "1003",
+        "title": "Book C",
+        "quantity": 1,
+        "originalUnitPrice": "0",
+        "regularUnitPrice": "880",
+        "group": {
+          "id": "group_10",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "1100"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "1320"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "880"
+    }
+  ],
+  "cases": [
+    {
+      "name": "platform_allocation falls back to price_ratio",
+      "settings": {
+        "bundleSplit": "platform_allocation",
+        "bundleFallback": "price_ratio"
+      },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "gross": "917",
+            "exTax": "833",
+            "net": "833",
+            "listPriceExTax": "1000",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_2",
+            "gross": "1100",
+            "exTax": "1000",
+            "net": "1000",
+            "listPriceExTax": "1200",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_3",
+            "gross": "733",
+            "exTax": "667",
+            "net": "667",
+            "listPriceExTax": "800",
+            "method": "price_ratio"
+          }
+        ],
+        "bundleSplitFallbacks": [
+          {
+            "ref": {
+              "kind": "group",
+              "groupId": "group_10"
+            },
+            "reason": "zero_priced_component",
+            "method": "price_ratio"
+          }
+        ]
+      }
+    }
+  ]
+}

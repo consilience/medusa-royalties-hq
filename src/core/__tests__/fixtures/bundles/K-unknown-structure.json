@@ -1,0 +1,71 @@
+{
+  "description": "A £0 'Free sampler' line beside a priced Book A, with no group and no manual composition. It is not guessed at: it is reported in unknownBundleLines and otherwise processed as a normal line (its units count at £0). The £0 gift card is not a bundle candidate.",
+  "order": {
+    "id": "order_9011",
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 1,
+        "originalUnitPrice": "10.00"
+      },
+      {
+        "id": "line_2",
+        "variantId": "1020",
+        "title": "Free sampler",
+        "quantity": 1,
+        "originalUnitPrice": "0.00"
+      },
+      {
+        "id": "line_3",
+        "variantId": "1030",
+        "title": "Gift card",
+        "quantity": 1,
+        "originalUnitPrice": "0.00",
+        "isGiftCard": true
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1020",
+      "included": true,
+      "title": "Free sampler",
+      "regularUnitPrice": "0.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "the sampler is reported, not split",
+      "settings": { "bundleSplit": "platform_allocation" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "quantity": 1,
+            "exTax": "10.00",
+            "included": true,
+            "method": null
+          },
+          {
+            "lineId": "line_2",
+            "quantity": 1,
+            "exTax": "0.00",
+            "included": true,
+            "method": null
+          }
+        ],
+        "unknownBundleLines": ["line_2"],
+        "bundleSplitFallbacks": []
+      }
+    }
+  ]
+}

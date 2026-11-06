@@ -1,0 +1,678 @@
+{
+  "id": "order_01M6KE90B1BP93X1MD94E7VXJH",
+  "display_id": 3,
+  "status": "pending",
+  "currency_code": "eur",
+  "created_at": "2026-11-04T14:09:15.618Z",
+  "updated_at": "2026-11-04T14:09:15.618Z",
+  "canceled_at": null,
+  "version": 1,
+  "region_id": "reg_01M6KDWBW4HJBPM7QWK1G2NR56",
+  "sales_channel_id": "sc_01M6KDWBVCY28RFY1PVM8A8MDJ",
+  "is_draft_order": false,
+  "metadata": null,
+  "total": 48,
+  "raw_total": {
+    "value": "48",
+    "precision": 20
+  },
+  "subtotal": 40,
+  "raw_subtotal": {
+    "value": "40",
+    "precision": 20
+  },
+  "tax_total": 8,
+  "raw_tax_total": {
+    "value": "8",
+    "precision": 20
+  },
+  "discount_total": 0,
+  "raw_discount_total": {
+    "value": "0",
+    "precision": 20
+  },
+  "discount_tax_total": 0,
+  "raw_discount_tax_total": {
+    "value": "0",
+    "precision": 20
+  },
+  "shipping_total": 12,
+  "raw_shipping_total": {
+    "value": "12",
+    "precision": 20
+  },
+  "shipping_subtotal": 10,
+  "raw_shipping_subtotal": {
+    "value": "10",
+    "precision": 20
+  },
+  "shipping_tax_total": 2,
+  "raw_shipping_tax_total": {
+    "value": "2",
+    "precision": 20
+  },
+  "shipping_discount_total": 0,
+  "raw_shipping_discount_total": {
+    "value": "0",
+    "precision": 20
+  },
+  "item_total": 36,
+  "raw_item_total": {
+    "value": "36",
+    "precision": 20
+  },
+  "item_subtotal": 30,
+  "raw_item_subtotal": {
+    "value": "30",
+    "precision": 20
+  },
+  "item_tax_total": 6,
+  "raw_item_tax_total": {
+    "value": "6",
+    "precision": 20
+  },
+  "item_discount_total": 0,
+  "raw_item_discount_total": {
+    "value": "0",
+    "precision": 20
+  },
+  "original_total": 48,
+  "raw_original_total": {
+    "value": "48",
+    "precision": 20
+  },
+  "original_subtotal": 40,
+  "raw_original_subtotal": {
+    "value": "40",
+    "precision": 20
+  },
+  "original_tax_total": 8,
+  "raw_original_tax_total": {
+    "value": "8",
+    "precision": 20
+  },
+  "original_item_total": 36,
+  "raw_original_item_total": {
+    "value": "36",
+    "precision": 20
+  },
+  "original_item_subtotal": 30,
+  "raw_original_item_subtotal": {
+    "value": "30",
+    "precision": 20
+  },
+  "original_item_tax_total": 6,
+  "raw_original_item_tax_total": {
+    "value": "6",
+    "precision": 20
+  },
+  "original_shipping_total": 12,
+  "raw_original_shipping_total": {
+    "value": "12",
+    "precision": 20
+  },
+  "original_shipping_subtotal": 10,
+  "raw_original_shipping_subtotal": {
+    "value": "10",
+    "precision": 20
+  },
+  "original_shipping_tax_total": 2,
+  "raw_original_shipping_tax_total": {
+    "value": "2",
+    "precision": 20
+  },
+  "credit_line_total": 0,
+  "raw_credit_line_total": {
+    "value": "0",
+    "precision": 20
+  },
+  "summary": {
+    "paid_total": 48,
+    "raw_paid_total": {
+      "value": "48",
+      "precision": 20
+    },
+    "refunded_total": 0,
+    "accounting_total": 48,
+    "credit_line_total": 0,
+    "transaction_total": 48,
+    "pending_difference": 0,
+    "raw_refunded_total": {
+      "value": "0",
+      "precision": 20
+    },
+    "current_order_total": 48,
+    "original_order_total": 48,
+    "raw_accounting_total": {
+      "value": "48",
+      "precision": 20
+    },
+    "raw_credit_line_total": {
+      "value": "0",
+      "precision": 20
+    },
+    "raw_transaction_total": {
+      "value": "48",
+      "precision": 20
+    },
+    "raw_pending_difference": {
+      "value": "0",
+      "precision": 20
+    },
+    "raw_current_order_total": {
+      "value": "48",
+      "precision": 20
+    },
+    "raw_original_order_total": {
+      "value": "48",
+      "precision": 20
+    }
+  },
+  "items": [
+    {
+      "id": "ordli_01M6KE90B1KAKKTG485MVR78F3",
+      "title": "Medusa T-Shirt",
+      "subtitle": "S / Black",
+      "quantity": 1,
+      "raw_quantity": {
+        "value": "1",
+        "precision": 20
+      },
+      "is_tax_inclusive": false,
+      "is_discountable": true,
+      "requires_shipping": true,
+      "variant_id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+      "product_id": "prod_01M6KDWBZA6ESC99JHKT8FF14D",
+      "variant_sku": "SHIRT-S-BLACK",
+      "variant_barcode": null,
+      "variant_title": "S / Black",
+      "product_title": "Medusa T-Shirt",
+      "product_handle": "t-shirt",
+      "metadata": {},
+      "created_at": "2026-11-04T14:09:15.618Z",
+      "updated_at": "2026-11-04T14:09:15.618Z",
+      "unit_price": 10,
+      "raw_unit_price": {
+        "value": "10",
+        "precision": 20
+      },
+      "subtotal": 10,
+      "raw_subtotal": {
+        "value": "10",
+        "precision": 20
+      },
+      "total": 12,
+      "raw_total": {
+        "value": "12",
+        "precision": 20
+      },
+      "tax_total": 2,
+      "raw_tax_total": {
+        "value": "2",
+        "precision": 20
+      },
+      "discount_total": 0,
+      "raw_discount_total": {
+        "value": "0",
+        "precision": 20
+      },
+      "discount_tax_total": 0,
+      "raw_discount_tax_total": {
+        "value": "0",
+        "precision": 20
+      },
+      "original_total": 12,
+      "raw_original_total": {
+        "value": "12",
+        "precision": 20
+      },
+      "original_subtotal": 10,
+      "raw_original_subtotal": {
+        "value": "10",
+        "precision": 20
+      },
+      "original_tax_total": 2,
+      "raw_original_tax_total": {
+        "value": "2",
+        "precision": 20
+      },
+      "refundable_total": 12,
+      "raw_refundable_total": {
+        "value": "12",
+        "precision": 20
+      },
+      "refundable_total_per_unit": 12,
+      "raw_refundable_total_per_unit": {
+        "value": "12",
+        "precision": 20
+      },
+      "compare_at_unit_price": null,
+      "raw_compare_at_unit_price": null,
+      "detail": {
+        "id": "orditem_01M6KE90B1R061Q9A2ZJ1YYWCE",
+        "version": 1,
+        "metadata": {},
+        "order_id": "order_01M6KE90B1BP93X1MD94E7VXJH",
+        "raw_unit_price": null,
+        "raw_compare_at_unit_price": null,
+        "raw_quantity": {
+          "value": "1",
+          "precision": 20
+        },
+        "raw_fulfilled_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_delivered_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_shipped_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_return_requested_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_return_received_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_return_dismissed_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_written_off_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:15.618Z",
+        "updated_at": "2026-11-04T14:09:15.618Z",
+        "deleted_at": null,
+        "item_id": "ordli_01M6KE90B1KAKKTG485MVR78F3",
+        "unit_price": null,
+        "compare_at_unit_price": null,
+        "quantity": 1,
+        "fulfilled_quantity": 0,
+        "delivered_quantity": 0,
+        "shipped_quantity": 0,
+        "return_requested_quantity": 0,
+        "return_received_quantity": 0,
+        "return_dismissed_quantity": 0,
+        "written_off_quantity": 0
+      },
+      "adjustments": [],
+      "tax_lines": [
+        {
+          "id": "ordlitxl_01M6KE90B10YZ2MT4H8F3NHT9D",
+          "description": "UK VAT",
+          "tax_rate_id": "txr_01M6KE7RV2KJKAK0V206YM8N8F",
+          "code": "GB-VAT",
+          "provider_id": "system",
+          "metadata": null,
+          "data": null,
+          "item_id": "ordli_01M6KE90B1KAKKTG485MVR78F3",
+          "raw_rate": {
+            "value": "20",
+            "precision": 20
+          },
+          "created_at": "2026-11-04T14:09:15.618Z",
+          "updated_at": "2026-11-04T14:09:15.618Z",
+          "deleted_at": null,
+          "rate": 20,
+          "total": 2,
+          "subtotal": 2,
+          "raw_total": {
+            "value": "2",
+            "precision": 20
+          },
+          "raw_subtotal": {
+            "value": "2",
+            "precision": 20
+          }
+        }
+      ],
+      "variant": {
+        "id": "variant_01M6KDWC0KG4YMGQNZ53ZBSGJE",
+        "sku": "SHIRT-S-BLACK",
+        "ean": null,
+        "upc": null,
+        "barcode": null,
+        "metadata": null
+      }
+    },
+    {
+      "id": "ordli_01M6KE90B1MN34RK2VBSP4WENN",
+      "title": "Medusa Sweatpants",
+      "subtitle": "S",
+      "quantity": 2,
+      "raw_quantity": {
+        "value": "2",
+        "precision": 20
+      },
+      "is_tax_inclusive": false,
+      "is_discountable": true,
+      "requires_shipping": true,
+      "variant_id": "variant_01M6KDWC0M5BE6Y1JSNXDH4XGM",
+      "product_id": "prod_01M6KDWBZAQDEP5FBZN2TKF3KV",
+      "variant_sku": "SWEATPANTS-S",
+      "variant_barcode": null,
+      "variant_title": "S",
+      "product_title": "Medusa Sweatpants",
+      "product_handle": "sweatpants",
+      "metadata": {},
+      "created_at": "2026-11-04T14:09:15.618Z",
+      "updated_at": "2026-11-04T14:09:15.618Z",
+      "unit_price": 10,
+      "raw_unit_price": {
+        "value": "10",
+        "precision": 20
+      },
+      "subtotal": 20,
+      "raw_subtotal": {
+        "value": "20",
+        "precision": 20
+      },
+      "total": 24,
+      "raw_total": {
+        "value": "24",
+        "precision": 20
+      },
+      "tax_total": 4,
+      "raw_tax_total": {
+        "value": "4",
+        "precision": 20
+      },
+      "discount_total": 0,
+      "raw_discount_total": {
+        "value": "0",
+        "precision": 20
+      },
+      "discount_tax_total": 0,
+      "raw_discount_tax_total": {
+        "value": "0",
+        "precision": 20
+      },
+      "original_total": 24,
+      "raw_original_total": {
+        "value": "24",
+        "precision": 20
+      },
+      "original_subtotal": 20,
+      "raw_original_subtotal": {
+        "value": "20",
+        "precision": 20
+      },
+      "original_tax_total": 4,
+      "raw_original_tax_total": {
+        "value": "4",
+        "precision": 20
+      },
+      "refundable_total": 24,
+      "raw_refundable_total": {
+        "value": "24",
+        "precision": 20
+      },
+      "refundable_total_per_unit": 12,
+      "raw_refundable_total_per_unit": {
+        "value": "12",
+        "precision": 20
+      },
+      "compare_at_unit_price": null,
+      "raw_compare_at_unit_price": null,
+      "detail": {
+        "id": "orditem_01M6KE90B19533MP03SJ1K9R1Z",
+        "version": 1,
+        "metadata": {},
+        "order_id": "order_01M6KE90B1BP93X1MD94E7VXJH",
+        "raw_unit_price": null,
+        "raw_compare_at_unit_price": null,
+        "raw_quantity": {
+          "value": "2",
+          "precision": 20
+        },
+        "raw_fulfilled_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_delivered_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_shipped_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_return_requested_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_return_received_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_return_dismissed_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "raw_written_off_quantity": {
+          "value": "0",
+          "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:15.618Z",
+        "updated_at": "2026-11-04T14:09:15.618Z",
+        "deleted_at": null,
+        "item_id": "ordli_01M6KE90B1MN34RK2VBSP4WENN",
+        "unit_price": null,
+        "compare_at_unit_price": null,
+        "quantity": 2,
+        "fulfilled_quantity": 0,
+        "delivered_quantity": 0,
+        "shipped_quantity": 0,
+        "return_requested_quantity": 0,
+        "return_received_quantity": 0,
+        "return_dismissed_quantity": 0,
+        "written_off_quantity": 0
+      },
+      "adjustments": [],
+      "tax_lines": [
+        {
+          "id": "ordlitxl_01M6KE90B1PYZBZQC9JY3GN5QT",
+          "description": "UK VAT",
+          "tax_rate_id": "txr_01M6KE7RV2KJKAK0V206YM8N8F",
+          "code": "GB-VAT",
+          "provider_id": "system",
+          "metadata": null,
+          "data": null,
+          "item_id": "ordli_01M6KE90B1MN34RK2VBSP4WENN",
+          "raw_rate": {
+            "value": "20",
+            "precision": 20
+          },
+          "created_at": "2026-11-04T14:09:15.618Z",
+          "updated_at": "2026-11-04T14:09:15.618Z",
+          "deleted_at": null,
+          "rate": 20,
+          "total": 4,
+          "subtotal": 4,
+          "raw_total": {
+            "value": "4",
+            "precision": 20
+          },
+          "raw_subtotal": {
+            "value": "4",
+            "precision": 20
+          }
+        }
+      ],
+      "variant": {
+        "id": "variant_01M6KDWC0M5BE6Y1JSNXDH4XGM",
+        "sku": "SWEATPANTS-S",
+        "ean": null,
+        "upc": null,
+        "barcode": null,
+        "metadata": null
+      }
+    }
+  ],
+  "shipping_methods": [
+    {
+      "id": "ordsm_01M6KE90B1C0R8TW3T6ZZWN8NY",
+      "name": "Standard Shipping",
+      "amount": 10,
+      "raw_amount": {
+        "value": "10",
+        "precision": 20
+      },
+      "is_tax_inclusive": false,
+      "shipping_option_id": "so_01M6KDWBXW4065SMH59YR0SMET",
+      "subtotal": 10,
+      "raw_subtotal": {
+        "value": "10",
+        "precision": 20
+      },
+      "total": 12,
+      "raw_total": {
+        "value": "12",
+        "precision": 20
+      },
+      "tax_total": 2,
+      "raw_tax_total": {
+        "value": "2",
+        "precision": 20
+      },
+      "discount_total": 0,
+      "raw_discount_total": {
+        "value": "0",
+        "precision": 20
+      },
+      "original_total": 12,
+      "raw_original_total": {
+        "value": "12",
+        "precision": 20
+      },
+      "tax_lines": [
+        {
+          "id": "ordsmtxl_01M6KE90B1WTX9P0WGBW6ZB3QH",
+          "description": "UK VAT",
+          "tax_rate_id": "txr_01M6KE7RV2KJKAK0V206YM8N8F",
+          "code": "GB-VAT",
+          "provider_id": "system",
+          "metadata": null,
+          "data": null,
+          "shipping_method_id": "ordsm_01M6KE90B1C0R8TW3T6ZZWN8NY",
+          "raw_rate": {
+            "value": "20",
+            "precision": 20
+          },
+          "created_at": "2026-11-04T14:09:15.618Z",
+          "updated_at": "2026-11-04T14:09:15.618Z",
+          "deleted_at": null,
+          "rate": 20,
+          "total": 2,
+          "subtotal": 2,
+          "raw_total": {
+            "value": "2",
+            "precision": 20
+          },
+          "raw_subtotal": {
+            "value": "2",
+            "precision": 20
+          }
+        }
+      ],
+      "adjustments": []
+    }
+  ],
+  "returns": [],
+  "transactions": [
+    {
+      "id": "ordtrx_01M6KE90GEE31C98J83HM71ZYN",
+      "version": 1,
+      "currency_code": "eur",
+      "reference": "capture",
+      "reference_id": "capt_01M6KE90FG1CJJG6N6WXJFME0W",
+      "order_id": "order_01M6KE90B1BP93X1MD94E7VXJH",
+      "return_id": null,
+      "return": null,
+      "exchange_id": null,
+      "exchange": null,
+      "claim_id": null,
+      "claim": null,
+      "raw_amount": {
+        "value": "48",
+        "precision": 20
+      },
+      "created_at": "2026-11-04T14:09:15.791Z",
+      "updated_at": "2026-11-04T14:09:15.791Z",
+      "deleted_at": null,
+      "amount": 48
+    }
+  ],
+  "credit_lines": [],
+  "payment_collections": [
+    {
+      "id": "pay_col_01M6KE908GSTW9YZ6NX3F9DBAK",
+      "status": "completed",
+      "currency_code": "eur",
+      "amount": 48,
+      "raw_amount": {
+        "value": "48",
+        "precision": 20
+      },
+      "authorized_amount": 48,
+      "raw_authorized_amount": {
+        "value": "48",
+        "precision": 20
+      },
+      "captured_amount": 48,
+      "raw_captured_amount": {
+        "value": "48",
+        "precision": 20
+      },
+      "refunded_amount": 0,
+      "raw_refunded_amount": {
+        "value": "0",
+        "precision": 20
+      },
+      "completed_at": "2026-11-04T14:09:15.765Z",
+      "created_at": "2026-11-04T14:09:15.536Z",
+      "updated_at": "2026-11-04T14:09:15.766Z",
+      "payments": [
+        {
+          "id": "pay_01M6KE90EC35AVMKTT3M8RDGMF",
+          "amount": 48,
+          "raw_amount": {
+            "value": "48",
+            "precision": 20
+          },
+          "currency_code": "eur",
+          "provider_id": "pp_system_default",
+          "captured_at": "2026-11-04T14:09:15.761Z",
+          "canceled_at": null,
+          "created_at": "2026-11-04T14:09:15.724Z",
+          "data": {},
+          "captures": [
+            {
+              "id": "capt_01M6KE90FG1CJJG6N6WXJFME0W",
+              "payment_id": "pay_01M6KE90EC35AVMKTT3M8RDGMF",
+              "metadata": null,
+              "created_by": null,
+              "raw_amount": {
+                "value": "48",
+                "precision": 20
+              },
+              "created_at": "2026-11-04T14:09:15.760Z",
+              "updated_at": "2026-11-04T14:09:15.760Z",
+              "deleted_at": null,
+              "amount": 48
+            }
+          ],
+          "refunds": []
+        }
+      ]
+    }
+  ],
+  "fulfillments": []
+}

@@ -1,0 +1,159 @@
+{
+  "description": "Fixed-price Crime Collection at £25 (Books A £10, B £12, C £8 regular). The price is spread across the components so none is at zero, so the platform-allocation guard holds.",
+  "order": {
+    "id": "order_9001",
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 1,
+        "originalUnitPrice": "8.33",
+        "regularUnitPrice": "10.00",
+        "group": {
+          "id": "group_1",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1002",
+        "title": "Book B",
+        "quantity": 1,
+        "originalUnitPrice": "10.00",
+        "regularUnitPrice": "12.00",
+        "group": {
+          "id": "group_1",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_3",
+        "variantId": "1003",
+        "title": "Book C",
+        "quantity": 1,
+        "originalUnitPrice": "6.67",
+        "regularUnitPrice": "8.00",
+        "group": {
+          "id": "group_1",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "8.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "platform_allocation keeps each component's own price",
+      "settings": {
+        "bundleSplit": "platform_allocation",
+        "bundleFallback": "even"
+      },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "quantity": 1,
+            "exTax": "8.33",
+            "net": "8.33",
+            "listPriceExTax": "10.00",
+            "included": true,
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_2",
+            "quantity": 1,
+            "exTax": "10.00",
+            "net": "10.00",
+            "listPriceExTax": "12.00",
+            "included": true,
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_3",
+            "quantity": 1,
+            "exTax": "6.67",
+            "net": "6.67",
+            "listPriceExTax": "8.00",
+            "included": true,
+            "method": "platform_allocation"
+          }
+        ],
+        "bundleSplitFallbacks": []
+      }
+    },
+    {
+      "name": "price_ratio re-weights £25 by 10:12:8",
+      "settings": { "bundleSplit": "price_ratio" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "8.33",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "10.00",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_3",
+            "exTax": "6.67",
+            "method": "price_ratio"
+          }
+        ],
+        "bundleSplitFallbacks": []
+      }
+    },
+    {
+      "name": "even gives the odd penny to the first component",
+      "settings": { "bundleSplit": "even" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "8.34",
+            "method": "even"
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "8.33",
+            "method": "even"
+          },
+          {
+            "lineId": "line_3",
+            "exTax": "8.33",
+            "method": "even"
+          }
+        ]
+      }
+    }
+  ]
+}

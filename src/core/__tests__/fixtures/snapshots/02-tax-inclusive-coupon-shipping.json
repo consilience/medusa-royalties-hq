@@ -1,0 +1,131 @@
+{
+  "description": "UK store, prices include 20% VAT, shipping included in net. A 10% coupon on one line: the breakdown's discount is taken ex tax by the line's own exTax ÷ gross (2.40 incl → 2.00 ex), so gross − discount equals the tax-free amount. Shipping ex tax (3.00) is spread by ex-tax 18:5 with largest remainder.",
+  "period": "2026-08",
+  "settings": { "includeShipping": true },
+  "products": [
+    {
+      "variantId": "201",
+      "included": true,
+      "title": "Garden Birds",
+      "isbnSourceValue": "9781402894626"
+    },
+    {
+      "variantId": "202",
+      "included": true,
+      "title": "Pocket Guide",
+      "sku": "PG-1"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_2001",
+      "paidAt": "2026-08-10T12:00:00+01:00",
+      "currency": "GBP",
+      "taxesIncluded": true,
+      "shipping": { "amount": "3.60", "tax": "0.60" },
+      "lines": [
+        {
+          "id": "line_201",
+          "variantId": "201",
+          "title": "Garden Birds",
+          "quantity": 2,
+          "originalUnitPrice": "12.00",
+          "discountTotal": "2.40",
+          "tax": "3.60",
+          "regularUnitPrice": "12.00"
+        },
+        {
+          "id": "line_202",
+          "variantId": "202",
+          "title": "Pocket Guide",
+          "quantity": 1,
+          "originalUnitPrice": "6.00",
+          "tax": "1.00"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": "9781402894626",
+          "sku": null,
+          "asin": null,
+          "store_product_id": "201"
+        },
+        "title": "Garden Birds",
+        "sale_country": "GB",
+        "currency": "GBP",
+        "units_sold": 2,
+        "royalty_on_sales": "20.35",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "10.00",
+        "discount_percent": "10.0000",
+        "breakdown": {
+          "gross": "20.00",
+          "discount": "2.00",
+          "shipping": "2.35",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      },
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "PG-1",
+          "asin": null,
+          "store_product_id": "202"
+        },
+        "title": "Pocket Guide",
+        "sale_country": "GB",
+        "currency": "GBP",
+        "units_sold": 1,
+        "royalty_on_sales": "5.65",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "5.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "5.00",
+          "discount": "0.00",
+          "shipping": "0.65",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      }
+    ],
+    "summary": {
+      "orders_included": 1,
+      "orders_excluded": 0,
+      "refunds_included": 0,
+      "unticked_product_lines": 0,
+      "unticked_revenue": {},
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": { "count": 0, "revenue": {}, "refunds": {} },
+      "fee_fallback_orders": 0
+    },
+    "settings": {
+      "commission_percent": null,
+      "card_fee_mode": "none",
+      "include_shipping": true,
+      "bundle_split": "price_ratio",
+      "frequency_months": 1,
+      "push_day": 15,
+      "refund_cutoff_at": "2026-09-15T00:00:00+01:00",
+      "push_mode": "automatic",
+      "card_fee_flat_percent": null,
+      "commission_excludes_fees_confirmed": false,
+      "fee_gateway_fallbacks": []
+    }
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "description": "US store, prices exclusive of sales tax. A coupon allocated to one line, two orders of the same book merged into one row, an invalid ISBN sent as SKU only, a product with no identifier held back, an unticked bookmark and a test order.",
+  "period": "2026-08",
+  "settings": { "timezone": "America/New_York", "saleCountry": "US" },
+  "products": [
+    {
+      "variantId": "101",
+      "included": true,
+      "title": "Poppy's Promise",
+      "isbnSourceValue": "978-1-4028-9462-6",
+      "sku": "POPPY-PB"
+    },
+    {
+      "variantId": "102",
+      "included": true,
+      "title": "Second Book",
+      "sku": "SB-1"
+    },
+    {
+      "variantId": "103",
+      "included": true,
+      "title": "Third Book",
+      "isbnSourceValue": "9780000000001",
+      "sku": "TH-1"
+    },
+    {
+      "variantId": "104",
+      "included": true,
+      "title": "Mystery Product"
+    },
+    {
+      "variantId": "105",
+      "included": false,
+      "title": "Bookmark"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_1001",
+      "paidAt": "2026-08-05T10:00:00-04:00",
+      "currency": "USD",
+      "lines": [
+        {
+          "id": "line_11",
+          "variantId": "101",
+          "title": "Poppy's Promise",
+          "quantity": 2,
+          "originalUnitPrice": "20.00",
+          "discountTotal": "4.00",
+          "tax": "2.88"
+        },
+        {
+          "id": "line_12",
+          "variantId": "102",
+          "title": "Second Book",
+          "quantity": 1,
+          "originalUnitPrice": "15.00",
+          "tax": "1.20"
+        },
+        {
+          "id": "line_13",
+          "variantId": "103",
+          "title": "Third Book",
+          "quantity": 1,
+          "originalUnitPrice": "10.00",
+          "tax": "0.80"
+        }
+      ]
+    },
+    {
+      "id": "order_1002",
+      "paidAt": "2026-08-20T10:00:00-04:00",
+      "currency": "USD",
+      "lines": [
+        {
+          "id": "line_21",
+          "variantId": "101",
+          "title": "Poppy's Promise",
+          "quantity": 1,
+          "originalUnitPrice": "20.00",
+          "tax": "1.60"
+        },
+        {
+          "id": "line_22",
+          "variantId": "104",
+          "title": "Mystery Product",
+          "quantity": 1,
+          "originalUnitPrice": "5.00"
+        },
+        {
+          "id": "line_23",
+          "variantId": "105",
+          "title": "Bookmark",
+          "quantity": 2,
+          "originalUnitPrice": "3.00"
+        }
+      ]
+    },
+    {
+      "id": "order_1003",
+      "paidAt": "2026-08-21T10:00:00-04:00",
+      "currency": "USD",
+      "test": true,
+      "lines": [
+        {
+          "id": "line_31",
+          "variantId": "101",
+          "title": "Poppy's Promise",
+          "quantity": 1,
+          "originalUnitPrice": "20.00"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": "9781402894626",
+          "sku": "POPPY-PB",
+          "asin": null,
+          "store_product_id": "101"
+        },
+        "title": "Poppy's Promise",
+        "sale_country": "US",
+        "currency": "USD",
+        "units_sold": 3,
+        "royalty_on_sales": "56.00",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "20.00",
+        "discount_percent": "6.6667",
+        "breakdown": {
+          "gross": "60.00",
+          "discount": "4.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      },
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "SB-1",
+          "asin": null,
+          "store_product_id": "102"
+        },
+        "title": "Second Book",
+        "sale_country": "US",
+        "currency": "USD",
+        "units_sold": 1,
+        "royalty_on_sales": "15.00",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "15.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "15.00",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      },
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "TH-1",
+          "asin": null,
+          "store_product_id": "103"
+        },
+        "title": "Third Book",
+        "sale_country": "US",
+        "currency": "USD",
+        "units_sold": 1,
+        "royalty_on_sales": "10.00",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "10.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "10.00",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      }
+    ],
+    "summary": {
+      "orders_included": 2,
+      "orders_excluded": 1,
+      "refunds_included": 0,
+      "unticked_product_lines": 1,
+      "unticked_revenue": { "USD": "6.00" },
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 1,
+      "lines_without_identifier": {
+        "count": 1,
+        "revenue": { "USD": "5.00" },
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    },
+    "settings": {
+      "commission_percent": null,
+      "card_fee_mode": "none",
+      "include_shipping": false,
+      "bundle_split": "price_ratio",
+      "frequency_months": 1,
+      "push_day": 15,
+      "refund_cutoff_at": "2026-09-15T00:00:00-04:00",
+      "push_mode": "automatic",
+      "card_fee_flat_percent": null,
+      "commission_excludes_fees_confirmed": false,
+      "fee_gateway_fallbacks": []
+    }
+  }
+}

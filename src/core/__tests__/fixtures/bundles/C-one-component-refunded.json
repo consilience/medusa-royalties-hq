@@ -1,0 +1,138 @@
+{
+  "description": "Bundle A at £25 with the price spread evenly (£8.34/£8.33/£8.33), then Book B (qty 1) refunded through the admin Refund flow at its line price.",
+  "order": {
+    "id": "order_9003",
+    "currency": "GBP",
+    "financialStatus": "partially_refunded",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 1,
+        "originalUnitPrice": "8.34",
+        "regularUnitPrice": "10.00",
+        "group": {
+          "id": "group_3",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1002",
+        "title": "Book B",
+        "quantity": 1,
+        "originalUnitPrice": "8.33",
+        "regularUnitPrice": "12.00",
+        "group": {
+          "id": "group_3",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_3",
+        "variantId": "1003",
+        "title": "Book C",
+        "quantity": 1,
+        "originalUnitPrice": "8.33",
+        "regularUnitPrice": "8.00",
+        "group": {
+          "id": "group_3",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      }
+    ],
+    "refunds": [
+      {
+        "id": "refund_31",
+        "createdAt": "2026-08-14T10:00:00Z",
+        "lines": [
+          {
+            "lineId": "line_2",
+            "quantity": 1,
+            "amount": "8.33",
+            "tax": "0.00"
+          }
+        ]
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "8.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "platform_allocation: the refund stays with Book B",
+      "settings": { "bundleSplit": "platform_allocation" },
+      "expect": {
+        "sales": [
+          { "lineId": "line_1", "exTax": "8.34" },
+          { "lineId": "line_2", "exTax": "8.33" },
+          { "lineId": "line_3", "exTax": "8.33" }
+        ],
+        "refunds": [
+          {
+            "refundId": "refund_31",
+            "lines": [
+              {
+                "lineId": "line_2",
+                "units": 1,
+                "exTax": "-8.33",
+                "net": "-8.33",
+                "method": "platform_allocation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "price_ratio: the refunded money is pooled over the refunded components only (here just Book B)",
+      "settings": { "bundleSplit": "price_ratio" },
+      "expect": {
+        "sales": [
+          { "lineId": "line_1", "exTax": "8.33" },
+          { "lineId": "line_2", "exTax": "10.00" },
+          { "lineId": "line_3", "exTax": "6.67" }
+        ],
+        "refunds": [
+          {
+            "refundId": "refund_31",
+            "lines": [
+              {
+                "lineId": "line_2",
+                "units": 1,
+                "exTax": "-8.33",
+                "net": "-8.33",
+                "method": "price_ratio"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

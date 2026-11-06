@@ -1,0 +1,164 @@
+name: Release
+
+# A pushed tag v<version> runs two jobs:
+# - release builds, checks and packs the plugin, install-tests the tarball,
+#   uploads it as the `package` artifact and attaches it to a GitHub Release
+#   (a prerelease when the version has a "-"). It can write releases but
+#   can't request an OIDC token.
+# - publish runs after it, only when the repository variable NPM_PUBLISH is
+#   `true`, in the `npm` environment, and publishes that tarball to npm by
+#   trusted publishing (OIDC, no token). It is the only job that can request
+#   the token, and it runs no checkout, project script or dependency.
+# The split keeps the token away from dependency code. It doesn't check the
+# tarball independently: release builds it with the dependencies installed.
+# Without NPM_PUBLISH a tag only makes the GitHub Release. The GitHub Release
+# comes first, so it lands even if npm refuses.
+# Both jobs run only in consilience/medusa-royalties-hq (each job's
+# `if`), so a v* tag pushed to a fork or a copy of it runs neither.
+on:
+  push:
+    tags: ["v*"]
+
+permissions: {}
+
+jobs:
+  release:
+    if: github.repository == 'consilience/medusa-royalties-hq'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      tgz: ${{ steps.pack.outputs.tgz }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      # No dependency cache in a release build (npm's advice). setup-node v5 and
+      # later cache by themselves when package.json has `packageManager`, so a
+      # move to them needs `package-manager-cache: false`.
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      # Commits here are named for their release and say nothing else.
+      - name: Check the release commit's message
+        run: |
+          message="$(git log -1 --format=%B)"
+          # The whole message, so a trailer below the first line fails too.
+          if ! [[ "$message" =~ ^Release\ [0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::The commit message must be exactly 'Release <version>'"; exit 1
+          fi
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run check:repo
+        env:
+          RHQ_DENY_TERMS: ${{ secrets.RHQ_DENY_TERMS }}
+      - run: npm run test:unit
+      - run: npm run build
+      - run: npm run check:package
+        env:
+          RHQ_DENY_TERMS: ${{ secrets.RHQ_DENY_TERMS }}
+      - name: Check the tag, version and changelog agree
+        run: |
+          if [ "$(node -p 'require("./package.json").private === true')" = true ]; then
+            echo "::error::package.json is private: remove \"private\": true to release"; exit 1
+          fi
+          version="$(node -p 'require("./package.json").version')"
+          tag="${GITHUB_REF_NAME#v}"
+          if [ "$tag" != "$version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME doesn't match package.json version $version"; exit 1
+          fi
+          if ! grep -q "^## \[$version\]" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md has no '## [$version]' section"; exit 1
+          fi
+          awk -v v="$version" '
+            $0 ~ "^## \\[" v "\\]" { on = 1; next }
+            on && /^## \[/ { exit }
+            on { print }
+          ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+      - name: Pack
+        id: pack
+        run: echo "tgz=$(npm pack --ignore-scripts --silent | tail -n 1)" >> "$GITHUB_OUTPUT"
+      # The file that goes to npm, not the build it came from.
+      - name: Check the tarball
+        env:
+          RHQ_DENY_TERMS: ${{ secrets.RHQ_DENY_TERMS }}
+          TGZ: ${{ steps.pack.outputs.tgz }}
+        run: node scripts/check-tarball.mjs "$TGZ"
+      - name: Install test (exports and declarations, from a consumer)
+        env:
+          TGZ: ${{ github.workspace }}/${{ steps.pack.outputs.tgz }}
+        run: |
+          # The peer range's floor and the Medusa the tests run on. No
+          # --legacy-peer-deps: a peer range a store can't satisfy fails the release.
+          for medusa in 2.22.0 2.22.3; do
+            scripts/install-test.sh "$TGZ" "$medusa"
+          done
+      # The install-tested tarball, for the publish job. Before the GitHub
+      # Release, so a failed upload leaves no release behind and the job can be
+      # re-run.
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: package
+          path: ${{ steps.pack.outputs.tgz }}
+          if-no-files-found: error
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TGZ: ${{ steps.pack.outputs.tgz }}
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          # A version with a "-" is a prerelease here too, as it is `next` on npm.
+          prerelease=()
+          if [[ "$version" == *-* ]]; then
+            prerelease=(--prerelease)
+          fi
+          gh release create "$GITHUB_REF_NAME" "$TGZ" --title "$GITHUB_REF_NAME" --notes-file "$RUNNER_TEMP/notes.md" "${prerelease[@]}"
+
+  publish:
+    needs: release
+    # A repository variable: a job-level `if` is evaluated before the job
+    # starts, and an environment's variables exist only on the runner after.
+    if: github.repository == 'consilience/medusa-royalties-hq' && vars.NPM_PUBLISH == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # npm's trusted publisher names this environment, whose deployment rule
+    # admits only v* tags.
+    environment: npm
+    permissions:
+      id-token: write # npm trusted publishing (OIDC); nothing else
+    steps:
+      # No checkout, so no .nvmrc: Node 22 (.nvmrc's) is named. Trusted
+      # publishing needs Node 22.14.0 or later. No cache.
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "22"
+          registry-url: https://registry.npmjs.org
+      # An artifact from this run needs no GITHUB_TOKEN permission.
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: package
+          path: ${{ runner.temp }}/package
+      - name: Publish to npm
+        env:
+          TGZ: ${{ runner.temp }}/package/${{ needs.release.outputs.tgz }}
+        run: |
+          npm install -g npm@11.21.0
+          npm_version="$(npm --version)"
+          echo "npm $npm_version"
+          # Trusted publishing needs npm 11.5.1 or later.
+          if [ "$(printf '%s\n' 11.5.1 "$npm_version" | sort -V | head -n 1)" != 11.5.1 ]; then
+            echo "::error::npm $npm_version is older than 11.5.1, which trusted publishing needs"; exit 1
+          fi
+          # Publishing a tarball runs no lifecycle scripts. With trusted
+          # publishing, npm generates provenance automatically from a public
+          # repository, and not from a private one.
+          version="$(tar -xOzf "$TGZ" package/package.json | node -p 'JSON.parse(require("fs").readFileSync(0, "utf8")).version')"
+          echo "Publishing $version"
+          if [[ "$version" == *-* ]]; then
+            # npm 11 refuses a prerelease without a tag.
+            npm publish "$TGZ" --tag next
+          else
+            npm publish "$TGZ"
+          fi

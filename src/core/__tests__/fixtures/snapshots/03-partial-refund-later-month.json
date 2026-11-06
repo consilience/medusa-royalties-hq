@@ -1,0 +1,226 @@
+{
+  "description": "August snapshot, 10% commission. A July sale partly refunded on 3 Aug (before July's recorded cut-off of 15 Aug, so it stays in July) and again on 20 Aug (after it, so it lands here). An August sale refunded on 2 Sep, before August's scheduled cut-off, so the refund lowers the sale instead: 3 sold less 1 returned. A July sale of another book refunded on 25 Aug gives a refund-only row (units_sold 0, no list price, no breakdown). An orphan refund is reported, not sent. Refund commission mirrors the sale.",
+  "period": "2026-08",
+  "settings": {
+    "commissionPercent": "10"
+  },
+  "recordedCutoffs": {
+    "2026-07": "2026-08-15T00:00:00+01:00"
+  },
+  "products": [
+    {
+      "variantId": "301",
+      "included": true,
+      "title": "River Song",
+      "sku": "V1-SKU"
+    },
+    {
+      "variantId": "302",
+      "included": true,
+      "title": "Hill Walks",
+      "sku": "V2-SKU"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_3001",
+      "paidAt": "2026-07-30T12:00:00+01:00",
+      "currency": "GBP",
+      "financialStatus": "partially_refunded",
+      "lines": [
+        {
+          "id": "line_301",
+          "variantId": "301",
+          "title": "River Song",
+          "quantity": 2,
+          "originalUnitPrice": "10.00"
+        }
+      ],
+      "refunds": [
+        {
+          "id": "refund_31",
+          "createdAt": "2026-08-03T10:00:00Z",
+          "lines": [
+            {
+              "lineId": "line_301",
+              "quantity": 1,
+              "amount": "10.00",
+              "tax": "0"
+            }
+          ]
+        },
+        {
+          "id": "refund_32",
+          "createdAt": "2026-08-20T10:00:00Z",
+          "lines": [
+            {
+              "lineId": "line_301",
+              "quantity": 1,
+              "amount": "10.00",
+              "tax": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "order_3002",
+      "paidAt": "2026-08-12T12:00:00+01:00",
+      "currency": "GBP",
+      "financialStatus": "partially_refunded",
+      "lines": [
+        {
+          "id": "line_302",
+          "variantId": "301",
+          "title": "River Song",
+          "quantity": 3,
+          "originalUnitPrice": "10.00"
+        }
+      ],
+      "refunds": [
+        {
+          "id": "refund_33",
+          "createdAt": "2026-09-02T10:00:00Z",
+          "lines": [
+            {
+              "lineId": "line_302",
+              "quantity": 1,
+              "amount": "10.00",
+              "tax": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "order_3003",
+      "paidAt": "2026-07-10T12:00:00+01:00",
+      "currency": "GBP",
+      "financialStatus": "refunded",
+      "lines": [
+        {
+          "id": "line_303",
+          "variantId": "302",
+          "title": "Hill Walks",
+          "quantity": 1,
+          "originalUnitPrice": "8.00"
+        }
+      ],
+      "refunds": [
+        {
+          "id": "refund_34",
+          "createdAt": "2026-08-25T10:00:00Z",
+          "lines": [
+            {
+              "lineId": "line_303",
+              "quantity": 1,
+              "amount": "8.00",
+              "tax": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "orphanRefunds": [
+    {
+      "orderId": "order_999",
+      "currency": "GBP",
+      "refund": {
+        "id": "refund_99",
+        "createdAt": "2026-08-05T10:00:00Z",
+        "lines": [
+          {
+            "lineId": "line_999",
+            "quantity": 1,
+            "amount": "12.00",
+            "tax": "2.00"
+          }
+        ]
+      }
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "V1-SKU",
+          "asin": null,
+          "store_product_id": "301"
+        },
+        "title": "River Song",
+        "sale_country": "GB",
+        "currency": "GBP",
+        "units_sold": 2,
+        "royalty_on_sales": "18.00",
+        "units_refunded": 1,
+        "royalty_on_refunds": "-9.00",
+        "list_price": "10.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "20.00",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "2.00"
+        }
+      },
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "V2-SKU",
+          "asin": null,
+          "store_product_id": "302"
+        },
+        "title": "Hill Walks",
+        "sale_country": "GB",
+        "currency": "GBP",
+        "units_sold": 0,
+        "royalty_on_sales": "0.00",
+        "units_refunded": 1,
+        "royalty_on_refunds": "-7.20",
+        "list_price": null,
+        "discount_percent": null,
+        "breakdown": null
+      }
+    ],
+    "summary": {
+      "orders_included": 1,
+      "orders_excluded": 0,
+      "refunds_included": 3,
+      "unticked_product_lines": 0,
+      "unticked_revenue": {},
+      "unmatched_refunds": {
+        "count": 1,
+        "by_currency": {
+          "GBP": "12.00"
+        }
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": {
+        "count": 0,
+        "revenue": {},
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    },
+    "settings": {
+      "commission_percent": "10",
+      "card_fee_mode": "none",
+      "include_shipping": false,
+      "bundle_split": "price_ratio",
+      "frequency_months": 1,
+      "push_day": 15,
+      "refund_cutoff_at": "2026-09-15T00:00:00+01:00",
+      "push_mode": "automatic",
+      "card_fee_flat_percent": null,
+      "commission_excludes_fees_confirmed": false,
+      "fee_gateway_fallbacks": []
+    }
+  }
+}

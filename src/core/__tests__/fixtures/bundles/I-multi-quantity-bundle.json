@@ -1,0 +1,145 @@
+{
+  "description": "Bundle quantity 2 (each component line already carries qty 2, and the group quantity is 2) plus a standalone Book A in the same order. Bundle-derived and ordinary units stay separate effective lines; aggregation merges them into one row.",
+  "order": {
+    "id": "order_9009",
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 2,
+        "originalUnitPrice": "8.34",
+        "regularUnitPrice": "10.00",
+        "group": {
+          "id": "group_9",
+          "title": "Crime Collection",
+          "quantity": 2,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1002",
+        "title": "Book B",
+        "quantity": 2,
+        "originalUnitPrice": "8.33",
+        "regularUnitPrice": "12.00",
+        "group": {
+          "id": "group_9",
+          "title": "Crime Collection",
+          "quantity": 2,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_3",
+        "variantId": "1003",
+        "title": "Book C",
+        "quantity": 2,
+        "originalUnitPrice": "8.33",
+        "regularUnitPrice": "8.00",
+        "group": {
+          "id": "group_9",
+          "title": "Crime Collection",
+          "quantity": 2,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_4",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 1,
+        "originalUnitPrice": "10.00"
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "8.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "platform_allocation",
+      "settings": { "bundleSplit": "platform_allocation" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "quantity": 2,
+            "exTax": "16.68",
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_2",
+            "quantity": 2,
+            "exTax": "16.66",
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_3",
+            "quantity": 2,
+            "exTax": "16.66",
+            "method": "platform_allocation"
+          },
+          {
+            "lineId": "line_4",
+            "quantity": 1,
+            "exTax": "10.00",
+            "listPriceExTax": "10.00",
+            "method": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "price_ratio: weights are regular price × quantity",
+      "settings": { "bundleSplit": "price_ratio" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "quantity": 2,
+            "exTax": "16.67",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_2",
+            "quantity": 2,
+            "exTax": "20.00",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_3",
+            "quantity": 2,
+            "exTax": "13.33",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_4",
+            "quantity": 1,
+            "exTax": "10.00",
+            "method": null
+          }
+        ]
+      }
+    }
+  ]
+}

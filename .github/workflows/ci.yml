@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    # No ROYALTIES_HQ_* variables: CI only ever talks to the tests' fake Royalties HQ.
+    env:
+      DB_HOST: localhost
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      # Commits here are named for their release and say nothing else.
+      - name: Check the release commit's message
+        if: github.repository == 'consilience/medusa-royalties-hq' && github.event_name == 'push'
+        run: |
+          message="$(git log -1 --format=%B)"
+          # The whole message, so a trailer below the first line fails too.
+          if ! [[ "$message" =~ ^Release\ [0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::The commit message must be exactly 'Release <version>'"; exit 1
+          fi
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      # The maintainers' term list comes from a secret, which GitHub doesn't
+      # give to fork or Dependabot pull requests, so these two checks fail
+      # there.
+      - run: npm run check:repo
+        env:
+          RHQ_DENY_TERMS: ${{ secrets.RHQ_DENY_TERMS }}
+      - run: npm run test:unit
+      - run: npm run build
+      - run: npm run check:package
+        env:
+          RHQ_DENY_TERMS: ${{ secrets.RHQ_DENY_TERMS }}
+      - run: npm run test:integration:modules
+      - run: npm run test:integration:http
+
+  # The packed tarball installed into a new project with the Medusa the tests
+  # run on, and its exports and declarations checked from there. The release
+  # also installs it with the peer range's floor, 2.22.0.
+  install-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Pack
+        id: pack
+        run: echo "tgz=$(npm pack --ignore-scripts --silent | tail -n 1)" >> "$GITHUB_OUTPUT"
+      # The file that would go to npm, not the build it came from.
+      - name: Check the tarball
+        env:
+          RHQ_DENY_TERMS: ${{ secrets.RHQ_DENY_TERMS }}
+          TGZ: ${{ steps.pack.outputs.tgz }}
+        run: node scripts/check-tarball.mjs "$TGZ"
+      - name: Install test
+        env:
+          TGZ: ${{ github.workspace }}/${{ steps.pack.outputs.tgz }}
+        run: scripts/install-test.sh "$TGZ" 2.22.3

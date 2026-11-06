@@ -1,0 +1,59 @@
+[
+  {
+    "id": "ordch_01M6KE9419XGY8EXQB61Y6ZH35",
+    "return_id": null,
+    "claim_id": null,
+    "exchange_id": null,
+    "version": 2,
+    "change_type": "credit_line",
+    "description": null,
+    "status": "confirmed",
+    "internal_note": null,
+    "created_by": null,
+    "requested_by": null,
+    "requested_at": null,
+    "confirmed_by": null,
+    "confirmed_at": "2026-11-04T14:09:19.408Z",
+    "declined_by": null,
+    "declined_reason": null,
+    "metadata": null,
+    "declined_at": null,
+    "canceled_by": null,
+    "canceled_at": null,
+    "carry_over_promotions": null,
+    "no_notification": null,
+    "order_id": "order_01M6KE93XRFAVDGCMHWSZC6SBG",
+    "created_at": "2026-11-04T14:09:19.401Z",
+    "updated_at": "2026-11-04T14:09:19.418Z",
+    "deleted_at": null,
+    "order": {
+      "id": "order_01M6KE93XRFAVDGCMHWSZC6SBG"
+    },
+    "actions": [
+      {
+        "id": "ordchact_01M6KE941C230XQ4TXN6BMB05P",
+        "order_id": "order_01M6KE93XRFAVDGCMHWSZC6SBG",
+        "return_id": null,
+        "claim_id": null,
+        "exchange_id": null,
+        "ordering": 9,
+        "version": 2,
+        "reference": "payment_collection",
+        "reference_id": "pay_col_01M6KE93WE0T3CE4H1CBCBRGYM",
+        "action": "CREDIT_LINE_ADD",
+        "details": {},
+        "internal_note": null,
+        "applied": true,
+        "order_change_id": "ordch_01M6KE9419XGY8EXQB61Y6ZH35",
+        "raw_amount": {
+          "value": "36",
+          "precision": 20
+        },
+        "created_at": "2026-11-04T14:09:19.404Z",
+        "updated_at": "2026-11-04T14:09:19.422Z",
+        "deleted_at": null,
+        "amount": 36
+      }
+    ]
+  }
+]

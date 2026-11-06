@@ -1,0 +1,195 @@
+{
+  "description": "A legacy bundle sold as its own product, 'Crime Collection (legacy)' at £25. The publisher has set its manual composition (Books A, B and C, one each), so the line becomes three virtual component lines. Then the whole bundle is refunded.",
+  "order": {
+    "id": "order_9007",
+    "currency": "GBP",
+    "financialStatus": "refunded",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1011",
+        "title": "Crime Collection (legacy)",
+        "quantity": 1,
+        "originalUnitPrice": "25.00"
+      }
+    ],
+    "refunds": [
+      {
+        "id": "refund_71",
+        "createdAt": "2026-08-20T10:00:00Z",
+        "lines": [
+          {
+            "lineId": "line_1",
+            "quantity": 1,
+            "amount": "25.00",
+            "tax": "0.00"
+          }
+        ]
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1011",
+      "included": false,
+      "title": "Crime Collection (legacy)",
+      "regularUnitPrice": "25.00",
+      "bundleComponents": [
+        { "variantId": "1001", "quantity": 1 },
+        { "variantId": "1002", "quantity": 1 },
+        { "variantId": "1003", "quantity": 1 }
+      ]
+    },
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "8.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "price_ratio, and the full refund exactly reverses the sale",
+      "settings": { "bundleSplit": "price_ratio" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "variantId": "1001",
+            "quantity": 1,
+            "exTax": "8.33",
+            "listPriceExTax": "10.00",
+            "included": true,
+            "method": "price_ratio",
+            "bundle": { "kind": "manual", "lineId": "line_1" }
+          },
+          {
+            "lineId": "line_1",
+            "variantId": "1002",
+            "quantity": 1,
+            "exTax": "10.00",
+            "listPriceExTax": "12.00",
+            "included": true,
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_1",
+            "variantId": "1003",
+            "quantity": 1,
+            "exTax": "6.67",
+            "listPriceExTax": "8.00",
+            "included": true,
+            "method": "price_ratio"
+          }
+        ],
+        "refunds": [
+          {
+            "refundId": "refund_71",
+            "lines": [
+              {
+                "variantId": "1001",
+                "units": 1,
+                "exTax": "-8.33",
+                "net": "-8.33"
+              },
+              {
+                "variantId": "1002",
+                "units": 1,
+                "exTax": "-10.00",
+                "net": "-10.00"
+              },
+              {
+                "variantId": "1003",
+                "units": 1,
+                "exTax": "-6.67",
+                "net": "-6.67"
+              }
+            ]
+          }
+        ],
+        "unknownBundleLines": []
+      }
+    },
+    {
+      "name": "even",
+      "settings": { "bundleSplit": "even" },
+      "expect": {
+        "sales": [
+          {
+            "variantId": "1001",
+            "exTax": "8.34",
+            "method": "even"
+          },
+          {
+            "variantId": "1002",
+            "exTax": "8.33",
+            "method": "even"
+          },
+          {
+            "variantId": "1003",
+            "exTax": "8.33",
+            "method": "even"
+          }
+        ],
+        "refunds": [
+          {
+            "refundId": "refund_71",
+            "lines": [
+              {
+                "variantId": "1001",
+                "exTax": "-8.34"
+              },
+              {
+                "variantId": "1002",
+                "exTax": "-8.33"
+              },
+              {
+                "variantId": "1003",
+                "exTax": "-8.33"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "platform_allocation has no component prices to trust, so manual composition uses the fallback (not noted: it is structural, not a guard failure)",
+      "settings": {
+        "bundleSplit": "platform_allocation",
+        "bundleFallback": "price_ratio"
+      },
+      "expect": {
+        "sales": [
+          {
+            "variantId": "1001",
+            "exTax": "8.33",
+            "method": "price_ratio"
+          },
+          {
+            "variantId": "1002",
+            "exTax": "10.00",
+            "method": "price_ratio"
+          },
+          {
+            "variantId": "1003",
+            "exTax": "6.67",
+            "method": "price_ratio"
+          }
+        ],
+        "bundleSplitFallbacks": []
+      }
+    }
+  ]
+}

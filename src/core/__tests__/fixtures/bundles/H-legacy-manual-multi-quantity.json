@@ -1,0 +1,108 @@
+{
+  "description": "The legacy bundle product bought twice (£50), then one of the two bundles refunded (£25). Virtual quantities are component qty × line qty; the refund is split by the sale weights and its units are component qty × refunded qty.",
+  "order": {
+    "id": "order_9008",
+    "currency": "GBP",
+    "financialStatus": "partially_refunded",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1011",
+        "title": "Crime Collection (legacy)",
+        "quantity": 2,
+        "originalUnitPrice": "25.00"
+      }
+    ],
+    "refunds": [
+      {
+        "id": "refund_81",
+        "createdAt": "2026-08-20T10:00:00Z",
+        "lines": [
+          {
+            "lineId": "line_1",
+            "quantity": 1,
+            "amount": "25.00",
+            "tax": "0.00"
+          }
+        ]
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1011",
+      "included": false,
+      "title": "Crime Collection (legacy)",
+      "bundleComponents": [
+        { "variantId": "1001", "quantity": 1 },
+        { "variantId": "1002", "quantity": 1 },
+        { "variantId": "1003", "quantity": 1 }
+      ]
+    },
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "8.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "price_ratio",
+      "settings": { "bundleSplit": "price_ratio" },
+      "expect": {
+        "sales": [
+          {
+            "variantId": "1001",
+            "quantity": 2,
+            "exTax": "16.67"
+          },
+          {
+            "variantId": "1002",
+            "quantity": 2,
+            "exTax": "20.00"
+          },
+          {
+            "variantId": "1003",
+            "quantity": 2,
+            "exTax": "13.33"
+          }
+        ],
+        "refunds": [
+          {
+            "refundId": "refund_81",
+            "lines": [
+              {
+                "variantId": "1001",
+                "units": 1,
+                "exTax": "-8.33"
+              },
+              {
+                "variantId": "1002",
+                "units": 1,
+                "exTax": "-10.00"
+              },
+              {
+                "variantId": "1003",
+                "units": 1,
+                "exTax": "-6.67"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

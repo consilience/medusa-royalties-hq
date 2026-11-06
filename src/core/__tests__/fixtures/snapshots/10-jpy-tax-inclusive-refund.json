@@ -1,0 +1,113 @@
+{
+  "description": "JPY (no minor unit), 10% consumption tax included, 10% commission, a coupon and a one-unit refund in the same month, which lowers the sale: 2 sold less 1 returned, with its share of the discount. Every amount is whole yen with no decimal point.",
+  "period": "2026-08",
+  "settings": {
+    "timezone": "Asia/Tokyo",
+    "saleCountry": "JP",
+    "commissionPercent": "10"
+  },
+  "products": [
+    {
+      "variantId": "1101",
+      "included": true,
+      "title": "東京物語",
+      "sku": "JP-1"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_10001",
+      "paidAt": "2026-08-10T12:00:00+09:00",
+      "currency": "JPY",
+      "taxesIncluded": true,
+      "financialStatus": "partially_refunded",
+      "lines": [
+        {
+          "id": "line_1101",
+          "variantId": "1101",
+          "title": "東京物語",
+          "quantity": 2,
+          "originalUnitPrice": "1650",
+          "discountTotal": "330",
+          "tax": "270"
+        }
+      ],
+      "refunds": [
+        {
+          "id": "refund_1101",
+          "createdAt": "2026-08-20T10:00:00+09:00",
+          "lines": [
+            {
+              "lineId": "line_1101",
+              "quantity": 1,
+              "amount": "1485",
+              "tax": "135"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "JP-1",
+          "asin": null,
+          "store_product_id": "1101"
+        },
+        "title": "東京物語",
+        "sale_country": "JP",
+        "currency": "JPY",
+        "units_sold": 1,
+        "royalty_on_sales": "1215",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0",
+        "list_price": "1500",
+        "discount_percent": "10.0000",
+        "breakdown": {
+          "gross": "1500",
+          "discount": "150",
+          "shipping": "0",
+          "fees": "0",
+          "commission": "135"
+        }
+      }
+    ],
+    "summary": {
+      "orders_included": 1,
+      "orders_excluded": 0,
+      "refunds_included": 1,
+      "unticked_product_lines": 0,
+      "unticked_revenue": {},
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": {
+        "count": 0,
+        "revenue": {},
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    },
+    "settings": {
+      "commission_percent": "10",
+      "card_fee_mode": "none",
+      "include_shipping": false,
+      "bundle_split": "price_ratio",
+      "frequency_months": 1,
+      "push_day": 15,
+      "refund_cutoff_at": "2026-09-15T00:00:00+09:00",
+      "push_mode": "automatic",
+      "card_fee_flat_percent": null,
+      "commission_excludes_fees_confirmed": false,
+      "fee_gateway_fallbacks": []
+    }
+  }
+}

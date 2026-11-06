@@ -1,0 +1,126 @@
+{
+  "description": "A £13 print + ebook bundle (Paperback £10, Ebook £6 regular, no tax). The whole £13 is on the paperback, so the platform-allocation guard fails. price_ratio gives £8.13 / £4.87, even gives £6.50 / £6.50.",
+  "order": {
+    "id": "order_9005",
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1005",
+        "title": "Book A — Paperback",
+        "quantity": 1,
+        "originalUnitPrice": "13.00",
+        "regularUnitPrice": "10.00",
+        "group": {
+          "id": "group_5",
+          "title": "Book A print + ebook",
+          "quantity": 1,
+          "variantId": "1013"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1006",
+        "title": "Book A — Ebook",
+        "quantity": 1,
+        "originalUnitPrice": "0.00",
+        "regularUnitPrice": "6.00",
+        "requiresShipping": false,
+        "group": {
+          "id": "group_5",
+          "title": "Book A print + ebook",
+          "quantity": 1,
+          "variantId": "1013"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1005",
+      "included": true,
+      "title": "Book A — Paperback",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1006",
+      "included": true,
+      "title": "Book A — Ebook",
+      "regularUnitPrice": "6.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "price_ratio: £8.13 / £4.87",
+      "settings": { "bundleSplit": "price_ratio" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "8.13",
+            "net": "8.13",
+            "listPriceExTax": "10.00",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "4.87",
+            "net": "4.87",
+            "listPriceExTax": "6.00",
+            "method": "price_ratio"
+          }
+        ],
+        "bundleSplitFallbacks": []
+      }
+    },
+    {
+      "name": "even: £6.50 / £6.50",
+      "settings": { "bundleSplit": "even" },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "6.50",
+            "method": "even"
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "6.50",
+            "method": "even"
+          }
+        ]
+      }
+    },
+    {
+      "name": "platform_allocation: the ebook is included at £0 beside a priced paperback, so it falls back to price_ratio and says so",
+      "settings": {
+        "bundleSplit": "platform_allocation",
+        "bundleFallback": "price_ratio"
+      },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "8.13",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "4.87",
+            "method": "price_ratio"
+          }
+        ],
+        "bundleSplitFallbacks": [
+          {
+            "ref": {
+              "kind": "group",
+              "groupId": "group_5"
+            },
+            "reason": "zero_priced_component",
+            "method": "price_ratio"
+          }
+        ]
+      }
+    }
+  ]
+}

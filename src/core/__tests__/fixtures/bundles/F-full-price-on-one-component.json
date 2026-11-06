@@ -1,0 +1,145 @@
+{
+  "description": "An app that puts the full £25 bundle price on the first component and £0 on the rest. Trusting it would pay Book A's author the whole bundle, so the platform-allocation guard fails and the fallback is used and noted.",
+  "order": {
+    "id": "order_9006",
+    "currency": "GBP",
+    "lines": [
+      {
+        "id": "line_1",
+        "variantId": "1001",
+        "title": "Book A",
+        "quantity": 1,
+        "originalUnitPrice": "25.00",
+        "group": {
+          "id": "group_6",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_2",
+        "variantId": "1002",
+        "title": "Book B",
+        "quantity": 1,
+        "originalUnitPrice": "0.00",
+        "group": {
+          "id": "group_6",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      },
+      {
+        "id": "line_3",
+        "variantId": "1003",
+        "title": "Book C",
+        "quantity": 1,
+        "originalUnitPrice": "0.00",
+        "group": {
+          "id": "group_6",
+          "title": "Crime Collection",
+          "quantity": 1,
+          "variantId": "1010"
+        }
+      }
+    ]
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1003",
+      "included": true,
+      "title": "Book C",
+      "regularUnitPrice": "8.00"
+    }
+  ],
+  "cases": [
+    {
+      "name": "fallback even",
+      "settings": {
+        "bundleSplit": "platform_allocation",
+        "bundleFallback": "even"
+      },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "8.34",
+            "method": "even"
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "8.33",
+            "method": "even"
+          },
+          {
+            "lineId": "line_3",
+            "exTax": "8.33",
+            "method": "even"
+          }
+        ],
+        "bundleSplitFallbacks": [
+          {
+            "ref": {
+              "kind": "group",
+              "groupId": "group_6"
+            },
+            "reason": "zero_priced_component",
+            "method": "even"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fallback price_ratio uses the catalog price when no order-time price was recorded",
+      "settings": {
+        "bundleSplit": "platform_allocation",
+        "bundleFallback": "price_ratio"
+      },
+      "expect": {
+        "sales": [
+          {
+            "lineId": "line_1",
+            "exTax": "8.33",
+            "listPriceExTax": "10.00",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_2",
+            "exTax": "10.00",
+            "listPriceExTax": "12.00",
+            "method": "price_ratio"
+          },
+          {
+            "lineId": "line_3",
+            "exTax": "6.67",
+            "listPriceExTax": "8.00",
+            "method": "price_ratio"
+          }
+        ],
+        "bundleSplitFallbacks": [
+          {
+            "ref": {
+              "kind": "group",
+              "groupId": "group_6"
+            },
+            "reason": "zero_priced_component",
+            "method": "price_ratio"
+          }
+        ]
+      }
+    }
+  ]
+}

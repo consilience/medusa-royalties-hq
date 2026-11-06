@@ -1,0 +1,111 @@
+{
+  "description": "NZ store, GST-inclusive prices, 15% commission with card fees off: the order's recorded card fee is ignored. Commission is 15% of the tax-free amount. The coupon's ex-tax value uses the line's own exTax ÷ gross (6.90 incl GST → 6.00).",
+  "period": "2026-08",
+  "settings": {
+    "timezone": "Pacific/Auckland",
+    "saleCountry": "NZ",
+    "commissionPercent": "15",
+    "cardFeeMode": "none"
+  },
+  "products": [
+    {
+      "variantId": "601",
+      "included": true,
+      "title": "Kiwi Tales",
+      "isbnSourceValue": "9781402894626"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_6001",
+      "paidAt": "2026-08-10T12:00:00+12:00",
+      "currency": "NZD",
+      "taxesIncluded": true,
+      "fee": {
+        "fee": "100",
+        "charge": "10000"
+      },
+      "lines": [
+        {
+          "id": "line_601",
+          "variantId": "601",
+          "title": "Kiwi Tales",
+          "quantity": 1,
+          "originalUnitPrice": "34.50",
+          "tax": "4.50"
+        },
+        {
+          "id": "line_602",
+          "variantId": "601",
+          "title": "Kiwi Tales",
+          "quantity": 2,
+          "originalUnitPrice": "34.50",
+          "discountTotal": "6.90",
+          "tax": "8.10"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": "9781402894626",
+          "sku": null,
+          "asin": null,
+          "store_product_id": "601"
+        },
+        "title": "Kiwi Tales",
+        "sale_country": "NZ",
+        "currency": "NZD",
+        "units_sold": 3,
+        "royalty_on_sales": "71.40",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "30.00",
+        "discount_percent": "6.6667",
+        "breakdown": {
+          "gross": "90.00",
+          "discount": "6.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "12.60"
+        }
+      }
+    ],
+    "summary": {
+      "orders_included": 1,
+      "orders_excluded": 0,
+      "refunds_included": 0,
+      "unticked_product_lines": 0,
+      "unticked_revenue": {},
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": {
+        "count": 0,
+        "revenue": {},
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    },
+    "settings": {
+      "commission_percent": "15",
+      "card_fee_mode": "none",
+      "include_shipping": false,
+      "bundle_split": "price_ratio",
+      "frequency_months": 1,
+      "push_day": 15,
+      "refund_cutoff_at": "2026-09-15T00:00:00+12:00",
+      "push_mode": "automatic",
+      "card_fee_flat_percent": null,
+      "commission_excludes_fees_confirmed": false,
+      "fee_gateway_fallbacks": []
+    }
+  }
+}

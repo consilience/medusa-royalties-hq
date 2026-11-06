@@ -1,0 +1,164 @@
+{
+  "description": "A £22 gift set (Book A £12, Book B £6, unticked tote £4 as recorded on the order) plus a standalone Book A at £10, split by price_ratio on regular prices 10:12:5. The tote keeps its weight and its £4.07 share is unticked revenue. Book A's bundle share merges into its ordinary row, and the units-weighted discount includes the bundle unit.",
+  "period": "2026-08",
+  "settings": {
+    "bundleSplit": "price_ratio"
+  },
+  "products": [
+    {
+      "variantId": "1001",
+      "included": true,
+      "title": "Book A",
+      "sku": "A-PB",
+      "regularUnitPrice": "10.00"
+    },
+    {
+      "variantId": "1002",
+      "included": true,
+      "title": "Book B",
+      "sku": "B-PB",
+      "regularUnitPrice": "12.00"
+    },
+    {
+      "variantId": "1004",
+      "included": false,
+      "title": "Tote bag",
+      "regularUnitPrice": "5.00"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_4001",
+      "paidAt": "2026-08-10T12:00:00+01:00",
+      "currency": "GBP",
+      "lines": [
+        {
+          "id": "line_401",
+          "variantId": "1001",
+          "title": "Book A",
+          "quantity": 1,
+          "originalUnitPrice": "12.00",
+          "regularUnitPrice": "10.00",
+          "group": {
+            "id": "group_40",
+            "title": "Gift set",
+            "quantity": 1,
+            "variantId": "1010"
+          }
+        },
+        {
+          "id": "line_402",
+          "variantId": "1002",
+          "title": "Book B",
+          "quantity": 1,
+          "originalUnitPrice": "6.00",
+          "regularUnitPrice": "12.00",
+          "group": {
+            "id": "group_40",
+            "title": "Gift set",
+            "quantity": 1,
+            "variantId": "1010"
+          }
+        },
+        {
+          "id": "line_403",
+          "variantId": "1004",
+          "title": "Tote bag",
+          "quantity": 1,
+          "originalUnitPrice": "4.00",
+          "regularUnitPrice": "5.00",
+          "group": {
+            "id": "group_40",
+            "title": "Gift set",
+            "quantity": 1,
+            "variantId": "1010"
+          }
+        },
+        {
+          "id": "line_404",
+          "variantId": "1001",
+          "title": "Book A",
+          "quantity": 1,
+          "originalUnitPrice": "10.00",
+          "regularUnitPrice": "10.00"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "A-PB",
+          "asin": null,
+          "store_product_id": "1001"
+        },
+        "title": "Book A",
+        "sale_country": "GB",
+        "currency": "GBP",
+        "units_sold": 2,
+        "royalty_on_sales": "18.15",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "10.00",
+        "discount_percent": "9.2500",
+        "breakdown": {
+          "gross": "18.15",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      },
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "B-PB",
+          "asin": null,
+          "store_product_id": "1002"
+        },
+        "title": "Book B",
+        "sale_country": "GB",
+        "currency": "GBP",
+        "units_sold": 1,
+        "royalty_on_sales": "9.78",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "12.00",
+        "discount_percent": "18.5000",
+        "breakdown": {
+          "gross": "9.78",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      }
+    ],
+    "summary": {
+      "orders_included": 1,
+      "orders_excluded": 0,
+      "refunds_included": 0,
+      "unticked_product_lines": 1,
+      "unticked_revenue": {
+        "GBP": "4.07"
+      },
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": {
+        "count": 0,
+        "revenue": {},
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    }
+  }
+}

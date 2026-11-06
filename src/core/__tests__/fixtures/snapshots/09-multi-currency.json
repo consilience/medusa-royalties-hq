@@ -1,0 +1,155 @@
+{
+  "description": "One book sold in three presentment currencies: one row per currency, sorted by currency code.",
+  "period": "2026-08",
+  "products": [
+    {
+      "variantId": "901",
+      "included": true,
+      "title": "Three Coins",
+      "isbnSourceValue": "9781402894626"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_9001",
+      "paidAt": "2026-08-10T12:00:00+01:00",
+      "currency": "GBP",
+      "lines": [
+        {
+          "id": "line_901",
+          "variantId": "901",
+          "title": "Three Coins",
+          "quantity": 1,
+          "originalUnitPrice": "10.00"
+        }
+      ]
+    },
+    {
+      "id": "order_9002",
+      "paidAt": "2026-08-11T12:00:00+01:00",
+      "currency": "USD",
+      "lines": [
+        {
+          "id": "line_902",
+          "variantId": "901",
+          "title": "Three Coins",
+          "quantity": 2,
+          "originalUnitPrice": "13.00"
+        }
+      ]
+    },
+    {
+      "id": "order_9003",
+      "paidAt": "2026-08-12T12:00:00+01:00",
+      "currency": "EUR",
+      "lines": [
+        {
+          "id": "line_903",
+          "variantId": "901",
+          "title": "Three Coins",
+          "quantity": 1,
+          "originalUnitPrice": "12.00"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": "9781402894626",
+          "sku": null,
+          "asin": null,
+          "store_product_id": "901"
+        },
+        "title": "Three Coins",
+        "sale_country": "GB",
+        "currency": "EUR",
+        "units_sold": 1,
+        "royalty_on_sales": "12.00",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "12.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "12.00",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      },
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": "9781402894626",
+          "sku": null,
+          "asin": null,
+          "store_product_id": "901"
+        },
+        "title": "Three Coins",
+        "sale_country": "GB",
+        "currency": "GBP",
+        "units_sold": 1,
+        "royalty_on_sales": "10.00",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "10.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "10.00",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      },
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": "9781402894626",
+          "sku": null,
+          "asin": null,
+          "store_product_id": "901"
+        },
+        "title": "Three Coins",
+        "sale_country": "GB",
+        "currency": "USD",
+        "units_sold": 2,
+        "royalty_on_sales": "26.00",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "13.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "26.00",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      }
+    ],
+    "summary": {
+      "orders_included": 3,
+      "orders_excluded": 0,
+      "refunds_included": 0,
+      "unticked_product_lines": 0,
+      "unticked_revenue": {},
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": {
+        "count": 0,
+        "revenue": {},
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "description": "Auckland shop (UTC+12 in August). Paid dates are given in UTC to prove the month is judged in the shop's zone: 31 Aug 23:30 local and 1 Aug 00:30 local are August; 31 Jul 23:30 local and 1 Sep 00:30 local are not.",
+  "period": "2026-08",
+  "settings": {
+    "timezone": "Pacific/Auckland",
+    "saleCountry": "NZ"
+  },
+  "products": [
+    {
+      "variantId": "801",
+      "included": true,
+      "title": "Midnight Train",
+      "sku": "M-1"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order_8001",
+      "paidAt": "2026-08-31T11:30:00Z",
+      "currency": "NZD",
+      "lines": [
+        {
+          "id": "line_801",
+          "variantId": "801",
+          "title": "Midnight Train",
+          "quantity": 1,
+          "originalUnitPrice": "20.00"
+        }
+      ]
+    },
+    {
+      "id": "order_8002",
+      "paidAt": "2026-07-31T11:30:00Z",
+      "currency": "NZD",
+      "lines": [
+        {
+          "id": "line_802",
+          "variantId": "801",
+          "title": "Midnight Train",
+          "quantity": 1,
+          "originalUnitPrice": "20.00"
+        }
+      ]
+    },
+    {
+      "id": "order_8003",
+      "paidAt": "2026-08-31T12:30:00Z",
+      "currency": "NZD",
+      "lines": [
+        {
+          "id": "line_803",
+          "variantId": "801",
+          "title": "Midnight Train",
+          "quantity": 1,
+          "originalUnitPrice": "20.00"
+        }
+      ]
+    },
+    {
+      "id": "order_8004",
+      "paidAt": "2026-07-31T12:30:00Z",
+      "currency": "NZD",
+      "lines": [
+        {
+          "id": "line_804",
+          "variantId": "801",
+          "title": "Midnight Train",
+          "quantity": 1,
+          "originalUnitPrice": "20.00"
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "rows": [
+      {
+        "identifiers": {
+          "rhq_product_id": null,
+          "isbn": null,
+          "sku": "M-1",
+          "asin": null,
+          "store_product_id": "801"
+        },
+        "title": "Midnight Train",
+        "sale_country": "NZ",
+        "currency": "NZD",
+        "units_sold": 2,
+        "royalty_on_sales": "40.00",
+        "units_refunded": 0,
+        "royalty_on_refunds": "0.00",
+        "list_price": "20.00",
+        "discount_percent": "0.0000",
+        "breakdown": {
+          "gross": "40.00",
+          "discount": "0.00",
+          "shipping": "0.00",
+          "fees": "0.00",
+          "commission": "0.00"
+        }
+      }
+    ],
+    "summary": {
+      "orders_included": 2,
+      "orders_excluded": 0,
+      "refunds_included": 0,
+      "unticked_product_lines": 0,
+      "unticked_revenue": {},
+      "unmatched_refunds": {
+        "count": 0,
+        "by_currency": {}
+      },
+      "bundle_split_fallbacks": 0,
+      "unknown_bundle_lines": 0,
+      "invalid_isbns": 0,
+      "lines_without_identifier": {
+        "count": 0,
+        "revenue": {},
+        "refunds": {}
+      },
+      "fee_fallback_orders": 0
+    },
+    "settings": {
+      "commission_percent": null,
+      "card_fee_mode": "none",
+      "include_shipping": false,
+      "bundle_split": "price_ratio",
+      "frequency_months": 1,
+      "push_day": 15,
+      "refund_cutoff_at": "2026-09-15T00:00:00+12:00",
+      "push_mode": "automatic",
+      "card_fee_flat_percent": null,
+      "commission_excludes_fees_confirmed": false,
+      "fee_gateway_fallbacks": []
+    }
+  }
+}

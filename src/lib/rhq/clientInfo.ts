@@ -4,5 +4,5 @@
 // built plugin; a unit test keeps the two in step.
 
 export const CLIENT_NAME = "royalties-hq-medusa";
-export const CLIENT_VERSION = "0.1.2";
+export const CLIENT_VERSION = "0.1.3";
 export const USER_AGENT = `${CLIENT_NAME}/${CLIENT_VERSION}`;

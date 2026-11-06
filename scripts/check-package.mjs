@@ -191,7 +191,7 @@ function main() {
     }
   }
 
-  // The package declares `SEE LICENSE IN LICENSE`, so the licence always ships.
+  // The licence isn't on the SPDX list, so its text must ship with the package.
   for (const required of ["README.md", "CHANGELOG.md", "LICENSE"]) {
     if (!files.has(required)) problems.push(`missing from the package: ${required}`)
   }

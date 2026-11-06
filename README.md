@@ -64,4 +64,4 @@ A month counts an order when its payment is fully captured. An order paid in a m
 
 ## Licence
 
-See [LICENSE](LICENSE).
+PolyForm Shield 1.0.0. See [LICENSE](LICENSE).

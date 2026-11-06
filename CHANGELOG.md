@@ -4,6 +4,12 @@ All notable changes to `@royaltieshq/medusa-royalties-hq` are recorded here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the
 package uses [semantic versioning](https://semver.org/).
 
+## [0.1.3] - 2026-11-06
+
+### Changed
+
+- The package metadata and README name the licence, PolyForm Shield 1.0.0.
+
 ## [0.1.2] - 2026-11-06
 
 ### Changed
